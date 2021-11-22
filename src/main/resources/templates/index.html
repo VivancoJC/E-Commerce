@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head>
+  <title>Ecommerce | Home</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+</head>
+
+
+  <body>
+  <section layout:fragment="content_top">
+  <!-- Start slider -->
+  <section id="aa-slider">
+    <div class="aa-slider-area">
+      <div id="sequence" class="seq">
+        <div class="seq-screen">
+          <ul class="seq-canvas">
+            <!-- single slide item -->
+            <li>
+              <div class="seq-model">
+                <img data-seq src="/img/slider/1.jpg" alt="Men slide img" />
+              </div>
+              <div class="seq-title">
+               <span data-seq>Ahorre hasta un 75% de descuento</span>                
+                <h2 data-seq>Tecnologia </h2>                
+                <p data-seq>compra en linea facil!.</p>
+                <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">COMPRA AHORA</a>
+              </div>
+            </li>
+            <!-- single slide item -->
+            <li>
+              <div class="seq-model">
+                <img data-seq src="img/slider/2.jpg" alt="Wristwatch slide img" />
+              </div>
+              <div class="seq-title">
+                <span data-seq>Ahorre hasta un 40% de descuento</span>                
+                <h2 data-seq>Ropa </h2>                
+                <p data-seq>ropa de moda actual</p>
+                <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">COMPRA AHORA</a>
+              </div>
+            </li>
+            <!-- single slide item -->
+            <li>
+              <div class="seq-model">
+                <img data-seq src="img/slider/3.jpg" alt="Women Jeans slide img" />
+              </div>
+              <div class="seq-title">
+                <span data-seq>Ahorre hasta un 75% de descuento</span>                
+                <h2 data-seq>Belleza y moda </h2>                
+                <p data-seq>Las mejores marcas</p>
+                <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">COMPRA AHORA</a>
+              </div>
+            </li>
+          
+                           
+          </ul>
+        </div>
+        <!-- slider navigation btn -->
+        <fieldset class="seq-nav" aria-controls="sequence" aria-label="Slider buttons">
+          <a type="button" class="seq-prev" aria-label="Previous"><span class="fa fa-angle-left"></span></a>
+          <a type="button" class="seq-next" aria-label="Next"><span class="fa fa-angle-right"></span></a>
+        </fieldset>
+      </div>
+    </div>
+  </section>
+  <!-- / slider -->
+  </section>
+
+  <section layout:fragment="content">
+
+
+  <section id="aa-support">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aa-support-area">
+            <!-- single support -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="aa-support-single">
+                <span class="fa fa-truck"></span>
+                <h4>ENVÍO GRATIS</h4>
+                <P>.</P>
+              </div>
+            </div>
+            <!-- single support -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="aa-support-single">
+                <span class="fa fa-clock-o"></span>
+                <h4>30 DÍAS DE DEVOLUCIÓN DE DINERO</h4>
+                <P>.</P>
+              </div>
+            </div>
+            <!-- single support -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="aa-support-single">
+                <span class="fa fa-phone"></span>
+                <h4>SOPORTE 24/7</h4>
+                <P>.</P>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </section>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/admin_layout}">
+<head>
+    <title>Admin Control</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <script>
+        function user_alert() {
+            var answer = confirm("Estas seguro?");
+            return answer;
+        }
+    </script>
+</head>
+
+
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+
+    <div layout:fragment="content">
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+          
+
+            <!-- Main content -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!-- .card -->
+                            <div class="card card-primary card-outline" th:if="${update == null}">
+                                <div class="card-header">
+                                    <h5 class="m-0">Agregar una nueva categoría</h5>
+                                </div>
+                                <div class="card-body">
+                                    <form action="/categoryAdd" method="post">
+                                        <div class="form-group">
+                                            <input name="categoryName" type="text" placeholder="Category Name"
+                                                   class="form-control"/>
+                                        </div>
+                                        <button class="btn btn-primary">Agregar</button>
+                                    </form>
+                                    <table class="table table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Nombre </th>
+                                            <th scope="col"></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:if="${ catlist != null }" th:each="item , iter : ${catlist}">
+                                            <th th:text="${item.cid}"></th>
+                                            <td th:text="${item.categoryName}"></td>
+                                            <td><a th:href="@{'/categoryUpdate?id='+${item.cid}}"
+                                                   class="btn btn-info btn-sm">Actualizar</a>
+                                                <a onclick="return user_alert()"
+                                                   th:href="@{'/categoryDelete/'+${item.cid}}"
+                                                   class="btn btn-danger btn-sm">Eliminar</a></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="card card-primary card-outline" th:if="${update != null}">
+                                <div class="card-header">
+                                    <h5 class="m-0">Actualizar categoría seleccionada</h5>
+                                </div>
+                                <div class="card-body">
+                                    <form action="/categoryAdd" method="post">
+                                        <div class="form-group">
+                                            <input readonly="readonly" th:value="${update.cid}" name="cid" type="text" class="form-control"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input th:value="${update.categoryName}" name="categoryName" type="text" placeholder="Category Name" class="form-control"/>
+                                        </div>
+                                        <button class="btn btn-primary">Actualizar</button>
+                                    </form>
+                                    <table class="table table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col"></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:if="${ catlist != null }" th:each="item , iter : ${catlist}">
+                                            <th th:text="${item.cid}"></th>
+                                            <td th:text="${item.categoryName}"></td>
+                                            <td><a th:href="@{'/categoryUpdate/?id='+${item.cid}}" class="btn btn-info btn-sm">Actualizar</a>
+                                                <a onclick="return user_alert()" th:href="@{'/categoryDelete/'+${item.cid}}" class="btn btn-danger btn-sm">Eliminar</a></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                         
+
+                            <!-- /.card -->
+                        </div>
+                        <!-- /.col-md-6 -->
+                      
+                           
+                        </div>
+                    </div>
+                    <!-- /.col-md-6 -->
+                </div>
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+<!-- ./wrapper -->
+
+</body>
+</html>

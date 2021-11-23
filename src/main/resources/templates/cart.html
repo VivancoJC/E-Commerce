@@ -56,15 +56,14 @@
                         <td><a th:href="'detail?id='+${item.pid}"><img th:src="${'img/products/'+item.img1}"></a></td>
                         
                         <td><a class="aa-cart-title" th:href="'detail?id='+${item.pid}" th:text="${item.title}">producto</a></td>
-                        <td th:text="${item.price}+' TL'">precio</td>
+                        <td th:text="${item.price}+' S/.'">precio</td>
                         
                         <td><input name="quantity" class="aa-cart-quantity" type="number" th:value="${item.quantity}"></td>
                       </tr>
                       <tr>
                         <td colspan="6" class="aa-cart-view-bottom">
                           <div class="aa-cart-coupon">
-                            <input class="aa-coupon-code" type="text" placeholder="Coupon">
-                            <input class="aa-cart-view-btn" type="submit" value="Apply Coupon">
+                          
                           </div>
                           <input class="aa-cart-view-btn" type="submit" value="Update Cart">
                         </td>
@@ -80,11 +79,11 @@
                  <tbody>
                    <tr>
                      <th>Subtotal</th>
-                     <td th:if="${total != null}" th:text="${total}+' TL'">SubTotal</td>
+                     <td th:if="${total != null}" th:text="${total}+' S/.'">SubTotal</td>
                    </tr>
                    <tr>
                      <th>Total</th>
-                     <td th:if="${total != null}" th:text="${total}+' TL'">Totlñ</td>
+                     <td th:if="${total != null}" th:text="${total}+' S/.'">Total</td>
                    </tr>
                  </tbody>
                </table>
